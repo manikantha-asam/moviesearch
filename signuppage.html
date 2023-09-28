@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sign Up Page</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: linear-gradient(to bottom, #1e90ff, #007acc);
+  }
+
+  .signup-container {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    width: 400px;
+    max-width: 90%;
+    animation: slide-up 0.5s ease-in-out, fade-in 1s ease-in-out;
+  }
+
+  @keyframes slide-up {
+    from {
+      transform: translateY(100px);
+      opacity: 0;
+    }
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+
+  @keyframes fade-in {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+  .signup-header {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+
+  .signup-input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    transition: border-color 0.3s;
+  }
+
+  .signup-input:focus {
+    border-color: dodgerblue;
+  }
+
+  .signup-button {
+    width: 100%;
+    padding: 10px;
+    background-color: dodgerblue;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+
+  .signup-button:hover {
+    background-color: #1e90ff;
+  }
+</style>
+</head>
+<body>
+<div class="signup-container">
+  <div class="signup-header">
+    <h2>Sign Up</h2>
+    <p>Create an account to get started</p>
+  </div>
+  <form method="post" action="/signupsubmit">
+  <input class="signup-input" type="text" placeholder="Fullname" name="fullname">
+  <input class="signup-input" type="email" placeholder="Email" name="email">
+  <input class="signup-input" type="password" placeholder="Password" name="password">
+  <button class="signup-button">Sign Up</button>
+</form>
+<p>Already have an account? <a href="http://localhost:3000/login">Login</a></p>
+</div>
+</body>
+</html>
